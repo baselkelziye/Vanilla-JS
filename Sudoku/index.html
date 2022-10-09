@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styless/styles.css" />
+    <link rel="stylesheet" href="/styless/table.css" />
+    <link rel="stylesheet" href="/styless/overlay.css" />
+    <script src="/scripts/app.js" defer></script>
+
+    <title>Sudoku</title>
+  </head>
+  <body>
+    <div id="backdrop"></div>
+    <section>
+      <aside class="modal">
+        <h2>Are sure that you want to reset the game?</h2>
+        <div class="outer">
+          <p>resetting game will cause to deleting all your progress</p>
+          <div class="inner">
+            <button id="yes-button">YES</button>
+          </div>
+          <div class="inner">
+            <button id="no-button">NO</button>
+          </div>
+        </div>
+      </aside>
+      <table>
+        <caption>
+          Sudoku!
+        </caption>
+        <colgroup>
+          <col id="col-1" />
+          <col id="col-2" />
+          <col id="col-3" />
+        </colgroup>
+        <colgroup>
+          <col id="col-4" />
+          <col id="col-5" />
+          <col id="col-6" />
+        </colgroup>
+        <colgroup>
+          <col id="col-7" />
+          <col id="col-8" />
+          <col id="col-9" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="1"
+                data-col="1"
+                value="3"
+              />
+            </td>
+            <td>
+              <input type="text" data-row="1" data-col="2" />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="1"
+                data-col="3"
+                value="6"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="1"
+                data-col="4"
+                value="5"
+              />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="1" data-col="5" />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="1"
+                data-col="6"
+                value="8"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="1"
+                data-col="7"
+                value="4"
+              />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="1" data-col="8" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="1" data-col="9" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="2"
+                data-col="1"
+                value="5"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="2"
+                data-col="2"
+                value="2"
+              />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="2" data-col="3" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="2" data-col="4" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="2" data-col="5" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="2" data-col="6" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="2" data-col="7" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="2" data-col="8" />
+            </td>
+            <td>
+              <input type="text" maxlength="3" data-row="2" data-col="9" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <input type="text" maxlength="1" data-row="3" data-col="1" />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="3"
+                data-col="2"
+                value="8"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="3"
+                data-col="3"
+                value="7"
+              />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="3" data-col="4" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="3" data-col="5" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="3" data-col="6" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="3" data-col="7" />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="3"
+                data-col="8"
+                value="3"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="3"
+                data-col="9"
+                value="1"
+              />
+            </td>
+          </tr>
+        </tbody>
+
+        <tbody>
+          <tr>
+            <td>
+              <input type="text" maxlength="1" data-row="4" data-col="1" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="4" data-col="2" />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="4"
+                data-col="3"
+                value="3"
+              />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="4" data-col="4" />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="4"
+                data-col="5"
+                value="1"
+              />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="4" data-col="6" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="4" data-col="7" />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="4"
+                data-col="8"
+                value="8"
+              />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="4" data-col="9" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="5"
+                data-col="1"
+                value="9"
+              />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="5" data-col="2" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="5" data-col="3" />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="5"
+                data-col="4"
+                value="8"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="5"
+                data-col="5"
+                value="6"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="5"
+                data-col="6"
+                value="3"
+              />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="5" data-col="7" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="5" data-col="8" />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="5"
+                data-col="9"
+                value="5"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" maxlength="1" data-row="6" data-col="1" />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="6"
+                data-col="2"
+                value="5"
+              />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="6" data-col="3" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="6" data-col="4" />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="6"
+                data-col="5"
+                value="9"
+              />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="6" data-col="6" />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="6"
+                data-col="7"
+                value="6"
+              />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="6" data-col="8" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="6" data-col="9" />
+            </td>
+          </tr>
+        </tbody>
+
+        <tbody>
+          <tr>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="7"
+                data-col="1"
+                value="1"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="7"
+                data-col="2"
+                value="3"
+              />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="7" data-col="3" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="7" data-col="4" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="7" data-col="5" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="7" data-col="6" />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="7"
+                data-col="7"
+                value="2"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="7"
+                data-col="8"
+                value="5"
+              />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="7" data-col="9" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <input type="text" maxlength="1" data-row="8" data-col="1" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="8" data-col="2" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="8" data-col="3" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="8" data-col="4" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="8" data-col="5" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="8" data-col="6" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="8" data-col="7" />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="8"
+                data-col="8"
+                value="7"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="8"
+                data-col="9"
+                value="4"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="text" maxlength="1" data-row="9" data-col="1" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="9" data-col="2" />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="9"
+                data-col="3"
+                value="5"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="9"
+                data-col="4"
+                value="2"
+              />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="9" data-col="5" />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="9"
+                data-col="6"
+                value="6"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                maxlength="1"
+                data-row="9"
+                data-col="7"
+                value="3"
+              />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="9" data-col="8" />
+            </td>
+            <td>
+              <input type="text" maxlength="1" data-row="9" data-col="9" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="outer">
+      <div class="inner">
+        <button id="reset-button">Reset</button>
+      </div>
+      <div class="inner">
+        <button id="note-button">Notes</button>
+      </div>
+      <div class="inner">
+        <button>Solve</button>
+      </div>
+      <div class="inner" id="timer">
+        <span id="hour">00</span>
+        <span id="colon">:</span>
+        <span id="minute">00</span>
+        <span id="colon">:</span>
+        <span id="second">00</span>
+        <span id="colon">:</span>
+        <span id="millisecond">00</span>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+caption {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+table {
+  border-collapse: collapse;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  width: 50rem;
+  margin: 4rem auto;
+}
+
+colgroup,
+tbody {
+  border: solid medium;
+}
+
+td {
+  border: solid thin;
+  height: 3.8em;
+  width: 3.8em;
+  text-align: center;
+  padding: 0;
+  background-color: rgb(127, 255, 212);
+}
+
+td:hover {
+  background-color: rgb(18, 249, 172);
+}
+input {
+  background-color: inherit;
+  height: inherit;
+  width: 100%;
+  text-align: inherit;
+  box-sizing: border-box;
+  font-size: 2.5rem;
+  list-style-type: none;
+  color: transparent;
+  text-shadow: 0px 0px 1px rgb(0, 0, 0);
+}
+
+.highlighted {
+  background-color: rgb(203, 254, 237);
+}
